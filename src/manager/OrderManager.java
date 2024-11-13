@@ -1,4 +1,11 @@
+package manager;
 import java.util.Scanner;
+
+import models.Candy;
+import models.Car;
+import models.OatMilk;
+import models.Pipe;
+import models.Product;
 
 public class OrderManager {
     private ProductList productList;
@@ -9,17 +16,22 @@ public class OrderManager {
 
     // Lägger till en bil i products-listan
     public void addCar(String regNumber, String color, String brand) {
-        productList.addCar(new car(regNumber, color, brand));
+        productList.addProduct(new Car(regNumber, color, brand));
     }
 
     // Lägger till godis i products-listan
     public void addCandy(String taste, int numberOf) {
-        productList.addCandy(new Candy(taste, numberOf));
+        productList.addProduct(new Candy(taste, numberOf));
     }
 
     // Lägger till rör i products-listan
     public void addPipe(double diameter, double length) {
-        productList.addPipe(new Pipe(diameter, length));
+        productList.addProduct(new Pipe(diameter, length));
+    }
+
+    // Lägger till havremjölk i products-listan
+    public void addOatMilk(int fat, double liter) {
+        productList.addProduct(new OatMilk(fat, liter));
     }
 
     // Visar alla produkter
@@ -76,9 +88,10 @@ public class OrderManager {
         listPipes();
 
         System.out.println("~~~~ Havremjölk ~~~~");
-        listOatMilks();
+        listMilks();
     }
 
+    // Metoder för att lista produkter av olika typer
     private void listCars() {
         for (Product product : productList.getProducts()) {
             if (product instanceof Car) {

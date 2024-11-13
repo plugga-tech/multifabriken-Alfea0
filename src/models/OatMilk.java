@@ -1,4 +1,5 @@
-public class OatMilk extends Products{
+package models;
+public class OatMilk extends Product{
     int fat;
     double liter;
 

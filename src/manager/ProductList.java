@@ -1,3 +1,9 @@
+package manager;
+import java.util.ArrayList;
+import java.util.List;
+
+import models.Product;
+
 public class ProductList {
     private List<Product> products;
 
