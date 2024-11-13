@@ -1,3 +1,4 @@
+package models;
 public class Car extends Product {
     private String regNumber;
     private String color;

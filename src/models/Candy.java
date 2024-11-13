@@ -1,4 +1,5 @@
-public class Candy {
+package models;
+public class Candy extends Product {
     String taste;
     int numberOf;
 

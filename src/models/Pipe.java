@@ -1,3 +1,4 @@
+package models;
 public class Pipe extends Product {
     double diameter;
     double length;
