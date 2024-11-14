@@ -1,4 +1,5 @@
 package manager;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import models.Candy;
@@ -50,44 +51,61 @@ public class OrderManager {
         addCar(regNumber, color, brand);
     }
 
-    public void handleCandyOrder(Scanner scanner) {
-        System.out.println("Ange smak: ");
-        String taste = scanner.nextLine();
-        System.out.println("Ange antal: ");
-        int numberOf = scanner.nextInt();
-        addCandy(taste, numberOf);
+       public void handleCandyOrder(Scanner scanner) {
+        try {
+            System.out.println("Ange smak: ");
+            String taste = scanner.nextLine();
+            System.out.println("Ange antal: ");
+            int numberOf = scanner.nextInt();
+            scanner.nextLine();  
+            addCandy(taste, numberOf);
+        } catch (InputMismatchException e) {
+            System.out.println("Fel: Ange ett giltigt heltal för antal.");
+            scanner.nextLine();  
+        }
     }
 
     public void handlePipeOrder(Scanner scanner) {
-        System.out.println("Ange diameter: ");
-        double diameter = scanner.nextDouble();
-        System.out.println("Ange längd: ");
-        double length = scanner.nextDouble();
-        addPipe(diameter, length);
+        try{
+            System.out.println("Ange diameter: ");
+            double diameter = scanner.nextDouble();
+            System.out.println("Ange längd: ");
+            double length = scanner.nextDouble();
+            scanner.nextLine();
+            addPipe(diameter, length);
+        } catch (InputMismatchException e) {
+            System.out.println("Fel: Ange ett giltigt decimaltal för diameter och längd.");
+            scanner.nextLine();
+        }
     }
 
     public void handleOatMilkOrder(Scanner scanner) {
-        System.out.println("Ange fetthalt (%): ");
-        int fat = scanner.nextInt();
-        System.out.println("Ange liter: ");
-        double liter = scanner.nextDouble();
-        addOatMilk(fat, liter);
+        try {
+            System.out.println("Ange fetthalt (%): ");
+            int fat = scanner.nextInt();
+            System.out.println("Ange liter: ");
+            double liter = scanner.nextDouble();
+            addOatMilk(fat, liter);
+        } catch (InputMismatchException e) {
+            System.out.println("Fel: Ange ett giltigt heltal för fetthalt och giltigt decimaltal för liter.");
+            scanner.nextLine();
+        }
     }
 
     // Metod för att lista alla produkter i en meny
     public void listAllOrders() {
-        System.out.println("~~~~ Alla Beställningar ~~~~");
+        System.out.println("\n~~~ Alla Beställningar ~~~");
 
-        System.out.println("~~~~ Bilar ~~~~");
+        System.out.println("\n~~~ Bilar ~~~");
         listCars();
 
-        System.out.println("~~~~ Godis ~~~~");
+        System.out.println("\n~~~ Godis ~~~");
         listCandies();
 
-        System.out.println("~~~~ Rör ~~~~");
+        System.out.println("\n~~~ Rör ~~~");
         listPipes();
 
-        System.out.println("~~~~ Havremjölk ~~~~");
+        System.out.println("\n~~~ Havremjölk ~~~");
         listMilks();
     }
 

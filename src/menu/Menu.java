@@ -7,7 +7,7 @@ public class Menu {
         System.out.println("3. Lägg till ett nytt rör");
         System.out.println("4. Lägg till en ny havremjölk");
         System.out.println("5. Visa beställningen");
-        System.out.println("\n6. Avsluta");
-        System.out.print("Välj ett alternativ: ");
+        System.out.println("6. Avsluta");
+        System.out.print("\nVälj ett alternativ: ");
     }
 }
