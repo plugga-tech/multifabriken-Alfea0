@@ -12,16 +12,8 @@ public class Candy extends Product {
         return taste;
     }
 
-    public void setTaste(String taste) {
-        this.taste = taste;
-    }
-
     public int getNumberOf() {
         return numberOf;
-    }
-
-    public void setNumberOf(int numberOf) {
-        this.numberOf = numberOf;
     }
 
     @Override

@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import manager.OrderManager;
@@ -46,10 +47,26 @@ public class App {
         
     }
 
+    // Metod för att hämta ett giltigt val från användaren
     private static int getUserChoice(Scanner scanner) {
-        int choice = scanner.nextInt();
-        scanner.nextLine(); 
-        return choice;
+    int choice = -1;  
+    boolean validChoice = false;
+    
+    while (!validChoice) {
+        try {
+            choice = scanner.nextInt();
+            scanner.nextLine();  
+            if (choice >= 1 && choice <= 6) {
+                validChoice = true;  
+            } else {
+                System.out.println("Ogiltigt val. Välj mellan 1 och 6.");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Ogiltig inmatning. Vänligen ange ett nummer mellan 1 och 6.");
+            scanner.nextLine();  
+        }
+    }
+    return choice;
     }
 
 }

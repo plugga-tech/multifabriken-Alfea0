@@ -12,16 +12,8 @@ public class OatMilk extends Product{
         return fat;
     }
 
-    public void setFat(int fat) {
-        this.fat = fat;
-    }
-
     public double getLiter() {
         return liter;
-    }
-
-    public void setLiter(double liter) {
-        this.liter = liter;
     }
 
     @Override
