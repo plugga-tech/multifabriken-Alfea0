@@ -18,21 +18,25 @@ public class OrderManager {
     // Lägger till en bil i products-listan
     public void addCar(String regNumber, String color, String brand) {
         productList.addProduct(new Car(regNumber, color, brand));
+        System.out.println("Produkt tillagd!");
     }
 
     // Lägger till godis i products-listan
     public void addCandy(String taste, int numberOf) {
         productList.addProduct(new Candy(taste, numberOf));
+        System.out.println("Produkt tillagd!");
     }
 
     // Lägger till rör i products-listan
     public void addPipe(double diameter, double length) {
         productList.addProduct(new Pipe(diameter, length));
+        System.out.println("Produkt tillagd!");
     }
 
     // Lägger till havremjölk i products-listan
     public void addOatMilk(int fat, double liter) {
         productList.addProduct(new OatMilk(fat, liter));
+        System.out.println("Produkt tillagd!");
     }
 
     // Visar alla produkter

@@ -11,14 +11,9 @@ public class Pipe extends Product {
     public double getDiameter() {
         return diameter;
     }
-    public void setDiameter(double diameter) {
-        this.diameter = diameter;
-    }
+
     public double getLength() {
         return length;
-    }
-    public void setLength(double length) {
-        this.length = length;
     }
 
     @Override
